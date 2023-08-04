@@ -77,13 +77,13 @@ int main(int argc, char* argv[]) {
 			nearestNeighborIt++;
 			route.insert(nearestNeighborIt, cities[i]);
 		}
-		int j = 0;
+		/*int j = 0;
 		for (std::list<City*>::iterator it = route.begin(); it != route.end(); it++) {
 			std::cout << j << " " << (*it)->id << std::endl;
 			j++;
 		}
 		totalDist += distToNearestNeighbor;
-		std::cout << "----" << std::endl;
+		std::cout << "----" << std::endl;*/
 	}
 	std::cout << "Total Distance: " << totalDist << std::endl;
 
