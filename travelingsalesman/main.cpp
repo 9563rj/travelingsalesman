@@ -81,9 +81,9 @@ int main(int argc, char* argv[]) {
 		for (std::list<City*>::iterator it = route.begin(); it != route.end(); it++) {
 			std::cout << j << " " << (*it)->id << std::endl;
 			j++;
-		}
+		}*/
+		//std::cout << "----" << std::endl;
 		totalDist += distToNearestNeighbor;
-		std::cout << "----" << std::endl;*/
 	}
 	std::cout << "Total Distance: " << totalDist << std::endl;
 
