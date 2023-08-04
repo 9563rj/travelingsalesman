@@ -29,13 +29,13 @@ int main(int argc, char* argv[]) {
 	std::vector<City*> cities;
 	std::list<City*> route;
 
-	//std::mt19937 mersenneTwister{static_cast<std::mt19937::result_type>(std::chrono::steady_clock::now().time_since_epoch().count())};
-	std::mt19937 mersenneTwister{};
+	std::mt19937 mersenneTwister{static_cast<std::mt19937::result_type>(std::chrono::steady_clock::now().time_since_epoch().count())};
+	//std::mt19937 mersenneTwister{};
 	std::uniform_real_distribution<double> posDistributionX(bufferX, windowX - bufferX);
 	std::uniform_real_distribution<double> posDistributionY(bufferY, windowY - bufferY);
 
 	// margins 10% window size
-	for (int i = 0; i < 254; i++) {
+	for (int i = 0; i < 762; i++) {
 		cities.push_back(new City(posDistributionX(mersenneTwister), posDistributionY(mersenneTwister), i, 255, 255, 255));
 	}
 	/*cities.push_back(new City(100, 100, 0, 255, 255, 255));
@@ -95,9 +95,9 @@ int main(int argc, char* argv[]) {
 		SDL_RenderClear(renderer);
 		int i = 0;
 		for (std::list<City*>::iterator it = route.begin(); it != route.end(); it++) {
-			Uint8 red = i;
+			Uint8 red = i/3;
 			Uint8 green = 255;
-			Uint8 blue = i;
+			Uint8 blue = i/3;
 
 			(*it)->red = red;
 			(*it)->green = green;
